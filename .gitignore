@@ -1,5 +1,9 @@
 # Dependencies
 node_modules/
+node_modules_incomplete/
+node_modules_interrupted/
+.local/
+*.feedback.json
 
 # Build
 dist/

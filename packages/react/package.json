@@ -14,7 +14,8 @@
         "react-dom": "^18.0.0"
     },
     "dependencies": {
-        "@web-media-annotator/core": "*",
-        "@web-media-annotator/ui": "*"
+        "@web-media-annotator/core": "workspace:*",
+        "@web-media-annotator/ui": "workspace:*",
+        "lucide-react": "^0.290.0"
     }
 }

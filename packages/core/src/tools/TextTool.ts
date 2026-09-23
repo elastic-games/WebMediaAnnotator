@@ -1,7 +1,7 @@
 import { BaseTool } from './BaseTool';
 import { Annotation } from '../Store';
 import { v4 as uuidv4 } from 'uuid';
-import opentype from 'opentype.js';
+import * as opentype from 'opentype.js';
 
 export class TextTool extends BaseTool {
     private activeInput: HTMLTextAreaElement | null = null;
