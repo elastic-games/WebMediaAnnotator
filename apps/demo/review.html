@@ -22,7 +22,11 @@
     button:disabled { opacity: .5; cursor: default; }
     .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 10px 0; }
     #notes { list-style: none; padding: 0; display: grid; gap: 8px; }
-    #notes button { width: 100%; text-align: left; background: #1b222c; border: 1px solid #394657; }
+    #notes li { display: flex; gap: 6px; }
+    #notes button { text-align: left; background: #1b222c; border: 1px solid #394657; }
+    #notes li > button:first-child { flex: 1; min-width: 0; }
+    #notes .delete-note { align-self: stretch; color: #ffb6b6; border-color: #68424a; }
+    #notes .delete-note:hover { background: #47272e; }
     .time { color: #8eafff; font-variant-numeric: tabular-nums; display: block; margin-bottom: 4px; }
     .note { white-space: pre-wrap; overflow-wrap: anywhere; }
     @media (max-width: 850px) { main { display: block; height: auto; } #stage { height: 65vh; } aside { border-left: 0; border-top: 1px solid #353d49; } }

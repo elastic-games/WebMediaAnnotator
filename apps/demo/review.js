@@ -31,6 +31,7 @@ function renderNotes() {
   for (const note of [...notes].sort((a, b) => a.frame - b.frame)) {
     const li = document.createElement('li');
     const button = document.createElement('button');
+    const deleteButton = document.createElement('button');
     const time = document.createElement('span');
     const body = document.createElement('span');
     time.className = 'time';
@@ -39,7 +40,16 @@ function renderNotes() {
     body.textContent = note.text;
     button.append(time, body);
     button.addEventListener('click', () => instance.player.seekToFrame(note.frame));
-    li.append(button);
+    deleteButton.className = 'delete-note';
+    deleteButton.type = 'button';
+    deleteButton.textContent = 'Delete';
+    deleteButton.setAttribute('aria-label', `Delete note at frame ${note.frame}`);
+    deleteButton.addEventListener('click', () => {
+      notes = notes.filter(item => item.id !== note.id);
+      renderNotes();
+      scheduleSave();
+    });
+    li.append(button, deleteButton);
     notesList.append(li);
   }
   document.getElementById('count').textContent = `${notes.length} note${notes.length === 1 ? '' : 's'}`;
